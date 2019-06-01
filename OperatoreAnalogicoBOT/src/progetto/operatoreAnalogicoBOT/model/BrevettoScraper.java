@@ -2,13 +2,13 @@ package progetto.operatoreAnalogicoBOT.model;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import com.gargoylesoftware.htmlunit.BrowserVersion;
-import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
+
+//import org.openqa.selenium.WebDriver;
+//import org.openqa.selenium.chrome.ChromeDriver;
+
 
 public class BrevettoScraper {
 	
@@ -17,17 +17,25 @@ public class BrevettoScraper {
 	HtmlPage page;
 	
 	public BrevettoScraper() {
+		try {
 		webClient = new WebClient();
+		}catch(Exception e) {
+			
+			System.out.println("aaaaaaaa non riesco a aprirti il webclient");
+			e.printStackTrace();
+		}
 	}
 		
 		
+	
 //		---------------
 //		System.setProperty("webdriver.chrome.driver", "/Users/scorl/Desktop/chromedriver.exe");
 //		WebDriver driver = new ChromeDriver();
 //		driver.get("https://didattica.polito.it/portal/page/portal/home/Studente");
 //		--------------------
 		
-		
+
+
 	public void setPage(String s) {
 		try {
 			this.pageURL=s;
@@ -40,7 +48,9 @@ public class BrevettoScraper {
 	
 	public String extractTitle() {
 //		String title = page.querySelector(".title").getNodeValue();
-		String title = page.getHtmlElementById("title").asText();
+		String title = page.getTitleText();
+//				getHtmlElementById("title").asText();
+		System.out.println(title);
 		return title;
 	}
 	

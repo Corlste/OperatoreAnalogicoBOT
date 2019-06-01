@@ -13,7 +13,7 @@ public class OperatoreDAO {
 	Connection connection = null;
 	
 	String sqlBrevetto = "INSERT INTO 'brevetti' (bla bla bla)";
-	String sqlTitle = "INSERT INTO 'brevetti' ('titolo') VALUSE(?);";
+	String sqlTitle = "INSERT INTO 'brevetti' ('titolo') VALUES(?);";
 	
 	public void setConnection(Connection connection) {
 		this.connection = connection;

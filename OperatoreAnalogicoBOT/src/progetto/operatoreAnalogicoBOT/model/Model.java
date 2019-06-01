@@ -14,6 +14,21 @@ public class Model {
 	DBConnect dbConn = new DBConnect();
 	
 	
+	public Model(OperatoreDAO dao, BrevettoScraper brevetto, DBConnect dbConn) {
+		super();
+		this.dao = dao;
+		this.brevetto = brevetto;
+		this.dbConn = dbConn;
+	}
+	
+
+
+	public Model() {
+		super();
+	}
+
+
+
 	public void test(String link) {
 		try {
 			BrevettoScraper bs = new BrevettoScraper();
