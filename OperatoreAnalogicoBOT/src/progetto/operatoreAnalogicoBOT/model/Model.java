@@ -33,11 +33,15 @@ public class Model {
 		try {
 			BrevettoScraper bs = new BrevettoScraper();
 			Connection conn = dbConn.getConnection();
-//			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/db_tripadvisor?user=root");
 			dao.setConnection(conn);
 			bs.setPage(link);
-			String titolo = bs.extractTitle();
-			dao.insertTitolo(titolo);
+			
+			Brevetto brev = bs.extractBrevetto();
+			dao.insertBrevetto(brev);
+			
+//			String titolo = bs.extractTitle();
+//			dao.insertTitolo(titolo);
+			
 			conn.close();
 			
 			
