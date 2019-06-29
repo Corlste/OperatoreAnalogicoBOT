@@ -22,7 +22,7 @@ public class OperatoreDAO {
 	
 	
 	public void insertBrevetto(Brevetto b) {
-		try {
+		/*try {
 			PreparedStatement stat;
 			stat = connection.prepareStatement(sqlDelete);
 			stat.execute();
@@ -30,7 +30,7 @@ public class OperatoreDAO {
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
-		}
+		}*/
 		
 		
 		try {
