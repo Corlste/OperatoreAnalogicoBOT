@@ -1,32 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_201"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="lib/commons-codec-1.11.jar"/>
-	<classpathentry kind="lib" path="lib/commons-io-2.6.jar"/>
-	<classpathentry kind="lib" path="lib/commons-lang3-3.9.jar"/>
-	<classpathentry kind="lib" path="lib/commons-logging-1.2.jar"/>
-	<classpathentry kind="lib" path="lib/commons-net-3.6.jar"/>
-	<classpathentry kind="lib" path="lib/commons-text-1.6.jar"/>
-	<classpathentry kind="lib" path="lib/htmlunit-2.35.0.jar"/>
-	<classpathentry kind="lib" path="lib/htmlunit-core-js-2.35.0.jar"/>
-	<classpathentry kind="lib" path="lib/htmlunit-cssparser-1.4.0.jar"/>
-	<classpathentry kind="lib" path="lib/httpclient-4.5.8.jar"/>
-	<classpathentry kind="lib" path="lib/httpcore-4.4.11.jar"/>
-	<classpathentry kind="lib" path="lib/httpmime-4.5.8.jar"/>
-	<classpathentry kind="lib" path="lib/jetty-client-9.4.16.v20190411.jar"/>
-	<classpathentry kind="lib" path="lib/jetty-http-9.4.16.v20190411.jar"/>
-	<classpathentry kind="lib" path="lib/jetty-io-9.4.16.v20190411.jar"/>
-	<classpathentry kind="lib" path="lib/jetty-util-9.4.16.v20190411.jar"/>
-	<classpathentry kind="lib" path="lib/jetty-xml-9.4.16.v20190411.jar"/>
-	<classpathentry kind="lib" path="lib/neko-htmlunit-2.35.0.jar"/>
-	<classpathentry kind="lib" path="lib/serializer-2.7.2.jar"/>
-	<classpathentry kind="lib" path="lib/websocket-api-9.4.16.v20190411.jar"/>
-	<classpathentry kind="lib" path="lib/websocket-client-9.4.16.v20190411.jar"/>
-	<classpathentry kind="lib" path="lib/websocket-common-9.4.16.v20190411.jar"/>
-	<classpathentry kind="lib" path="lib/xalan-2.7.2.jar"/>
-	<classpathentry kind="lib" path="lib/xercesImpl-2.12.0.jar"/>
-	<classpathentry kind="lib" path="lib/xml-apis-1.4.01.jar"/>
-	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.38-bin.jar"/>
+	<classpathentry kind="src" path="lib"/>
+	<classpathentry exported="true" kind="lib" path="lib/commons-codec-1.11.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/commons-io-2.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/commons-lang3-3.9.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/commons-logging-1.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/commons-net-3.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/commons-text-1.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/htmlunit-2.35.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/htmlunit-core-js-2.35.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/htmlunit-cssparser-1.4.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/httpclient-4.5.8.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/httpcore-4.4.11.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/httpmime-4.5.8.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jetty-client-9.4.16.v20190411.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jetty-http-9.4.16.v20190411.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jetty-io-9.4.16.v20190411.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jetty-util-9.4.16.v20190411.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jetty-xml-9.4.16.v20190411.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/neko-htmlunit-2.35.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/serializer-2.7.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/websocket-api-9.4.16.v20190411.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/websocket-client-9.4.16.v20190411.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/websocket-common-9.4.16.v20190411.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/xalan-2.7.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/xercesImpl-2.12.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/xml-apis-1.4.01.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/mysql-connector-java-5.1.38-bin.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/google-api-client-1.25.0.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/google-api-client-android-1.25.0.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/google-api-client-appengine-1.25.0.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/google-api-client-gson-1.25.0.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/google-api-client-jackson2-1.25.0.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/google-api-client-java6-1.25.0.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/google-api-client-servlet-1.25.0.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/google-http-client-1.25.0.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/google-http-client-android-1.25.0.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/google-http-client-appengine-1.25.0.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/google-http-client-gson-1.25.0.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/google-http-client-jackson2-1.25.0.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/google-http-client-jdo-1.25.0.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/google-oauth-client-1.25.0.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/google-oauth-client-appengine-1.25.0.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/google-oauth-client-java6-1.25.0.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/google-oauth-client-jetty-1.25.0.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/google-oauth-client-servlet-1.25.0.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/gson-2.1.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/httpclient-4.5.5.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/jackson-core-2.9.6.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/jdo2-api-2.3-eb.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/jetty-6.1.26.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/jetty-util-6.1.26.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/jsr305-3.0.2.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs/transaction-api-1.1.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/google-api-client-1.25.0-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/google-api-client-android-1.25.0-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/google-api-client-appengine-1.25.0-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/google-api-client-gson-1.25.0-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/google-api-client-jackson2-1.25.0-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/google-api-client-java6-1.25.0-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/google-api-client-servlet-1.25.0-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/google-http-client-1.25.0-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/google-http-client-android-1.25.0-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/google-http-client-appengine-1.25.0-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/google-http-client-gson-1.25.0-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/google-http-client-jackson2-1.25.0-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/google-http-client-jdo-1.25.0-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/google-oauth-client-1.25.0-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/google-oauth-client-appengine-1.25.0-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/google-oauth-client-java6-1.25.0-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/google-oauth-client-jetty-1.25.0-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/google-oauth-client-servlet-1.25.0-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/gson-2.1-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/httpclient-4.5.5-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/jackson-core-2.9.6-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/jdo2-api-2.3-eb-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/jetty-6.1.26-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/jetty-util-6.1.26-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/libs-sources/transaction-api-1.1-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/google-api-services-customsearch-v1-rev74-1.25.0.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/google-api-services-customsearch-v1-rev74-1.25.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/customsearch/google-api-services-customsearch-v1-rev74-1.25.0-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/google-api-services-customsearch-v1-rev74-java-1.25.0/Guava/guava-23.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
