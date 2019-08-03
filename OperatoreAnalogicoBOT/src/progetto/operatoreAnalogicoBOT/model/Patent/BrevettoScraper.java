@@ -1,4 +1,4 @@
-package progetto.operatoreAnalogicoBOT.model;
+package progetto.operatoreAnalogicoBOT.model.Patent;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -37,28 +37,33 @@ import com.gargoylesoftware.htmlunit.html.DomElement;
 import com.gargoylesoftware.htmlunit.html.DomNode;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
+import progetto.operatoreAnalogicoBOT.model.VirtualWebClient;
+
 //import org.openqa.selenium.WebDriver;
 //import org.openqa.selenium.chrome.ChromeDriver;
 
 
 public class BrevettoScraper {
+//	
+//	static WebClient webClient;
+//	private String pageURL;
+	private HtmlPage htmlPage;
 	
-	static WebClient webClient;
-	String pageURL;
-	HtmlPage page;
-	
-
-	//String partita_iva = "11111111111";
-	
-	public BrevettoScraper() {
-		try {
-		webClient = new WebClient();
-		}catch(Exception e) {
-			System.out.println("aaaaaaaa non riesco a aprirti il webclient");
-			e.printStackTrace();
-		}
-	}
+	public BrevettoScraper () {
 		
+		
+	}
+//	
+//	
+//	public BrevettoScraper() {
+//		try {
+//		webClient = new WebClient();
+//		}catch(Exception e) {
+//			System.out.println("aaaaaaaa non riesco a aprirti il webclient");
+//			e.printStackTrace();
+//		}
+//	}
+//		
 		
 	
 //		---------------
@@ -69,10 +74,10 @@ public class BrevettoScraper {
 		
 
 
-	public void setPage(String s) {
+	public void setPage(String url) {
 		try {
-			this.pageURL=s;
-			this.page=webClient.getPage(s);
+			//this.pageURL = url;
+			this.htmlPage = VirtualWebClient.setPage(url);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}	
@@ -88,36 +93,38 @@ public class BrevettoScraper {
 	}
 	*/
 	
-	public String getCurrentAssignee(String partita_iva) {
+	public String getCurrentAssignee() {
 		String assignee =null;
 
 		try {
-			DomNode assignee_node = (DomNode) page.getByXPath("//dd[@itemprop='assigneeCurrent']").get(0);
+			DomNode assignee_node = (DomNode) htmlPage.getByXPath("//dd[@itemprop='assigneeCurrent']").get(0);
 			assignee = assignee_node.getTextContent();
-			}catch(Exception e) {
+		}catch(Exception e) {
 			}
+		
 		return assignee;
 	}
+	
 		
 	public Brevetto extractBrevetto(String partita_iva) {
 
-		String title_text = page.getTitleText();
+		String title_text = htmlPage.getTitleText();
 		StringTokenizer token_title = new StringTokenizer(title_text);
 		String app_num = token_title.nextToken();
 
-		String title = page.getElementByName("DC.title").getAttribute("content");
+		String title = htmlPage.getElementByName("DC.title").getAttribute("content");
 
-		String abstr = page.getElementByName("DC.description").getAttribute("content");
+		String abstr = htmlPage.getElementByName("DC.description").getAttribute("content");
 		
 		String assignee =null;
 		try {
-		DomNode assignee_node = (DomNode) page.getByXPath("//dd[@itemprop='assigneeCurrent']").get(0);
-		assignee = assignee_node.getTextContent();
-		}catch(Exception e) {
-		}
+			DomNode assignee_node = (DomNode) htmlPage.getByXPath("//dd[@itemprop='assigneeCurrent']").get(0);
+			assignee = assignee_node.getTextContent();
+		}	catch(Exception e) {
+			}
 		
 		List<DomNode> inventor_nodes = new LinkedList<DomNode>();
-		for (Object n: page.getByXPath("//dd[@itemprop='inventor']")) {
+		for (Object n: htmlPage.getByXPath("//dd[@itemprop='inventor']")) {
 			inventor_nodes.add((DomNode)n);
 		}
 		String inventors ="";
@@ -127,14 +134,14 @@ public class BrevettoScraper {
 		
 		String data = null;
 		try {
-		DomNode data_node = (DomNode) page.getByXPath("//time[@itemprop='publicationDate']").get(0);
+		DomNode data_node = (DomNode) htmlPage.getByXPath("//time[@itemprop='publicationDate']").get(0);
 		data = data_node.getTextContent();
 		}catch(Exception e) {
 			System.out.println("dataaaaaa");
 		}
 		
 		List<DomNode> key_nodes = new LinkedList<DomNode>();
-		for (Object n: page.getByXPath("//dd[@itemprop='priorArtKeywords']")) {
+		for (Object n: htmlPage.getByXPath("//dd[@itemprop='priorArtKeywords']")) {
 			key_nodes.add((DomNode)n);
 		}
 		String keywords ="";
@@ -145,10 +152,10 @@ public class BrevettoScraper {
 		
 		Map<DomNode,DomNode> nations_map = new HashMap<DomNode,DomNode>();
 		int i=0;
-		for (Object n: page.getByXPath("//li[@itemprop='application']/span[@itemprop='countryCode']")) {
+		for (Object n: htmlPage.getByXPath("//li[@itemprop='application']/span[@itemprop='countryCode']")) {
 			
 			DomNode nat = (DomNode)n;
-			Object s = page.getByXPath("//li[@itemprop='application']/span[@itemprop='legalStatusCat']").get(i); 
+			Object s = htmlPage.getByXPath("//li[@itemprop='application']/span[@itemprop='legalStatusCat']").get(i); 
 			DomNode status = (DomNode)s;
 
 			nations_map.put(nat, status);
@@ -164,7 +171,7 @@ public class BrevettoScraper {
 		
          
         List<DomNode> codclass_nodes = new LinkedList<DomNode>();
- 		for (Object n: page.getByXPath("//li[@itemprop='cpcs']/span[@itemprop='Code']")) {
+ 		for (Object n: htmlPage.getByXPath("//li[@itemprop='cpcs']/span[@itemprop='Code']")) {
  			codclass_nodes.add((DomNode)n);
  		}
  		
@@ -188,12 +195,9 @@ public class BrevettoScraper {
  			}
  		
  		}
-         
+        		
 		
-				
-		
-		
-		Brevetto brevetto = new Brevetto(partita_iva, app_num, title, assignee, inventors, data, nations_active,  abstr, codclass, keywords); 
+		Brevetto brevetto = new Brevetto(partita_iva, app_num, title, assignee, inventors, data, nations_active, abstr, codclass, keywords); 
 		
 		System.out.println(brevetto.toString());
 		return brevetto;
@@ -202,13 +206,13 @@ public class BrevettoScraper {
 	
 	//final File folder = new File("C:\\Users\\scorl\\Desktop\\Magistrale\\Secondo anno\\GISP ICT");
 	
-	public void modifyFileName(final File folder, String partita_iva) {
+	public void modifyFileName(final File folder, String partita_iva, String CSV_folder) {
 	    for (final File fileEntry : folder.listFiles()) {
 	        String filename = fileEntry.getName();
 	        String[] tokens = filename.split("-");
 	        if (tokens[0].compareTo("gp")==0 && tokens[1].compareTo("search")==0) 
 	        	{
-	        	File fuffaFile = new File ("C:\\Users\\scorl\\Desktop\\Magistrale\\Secondo anno\\GISP ICT\\"+partita_iva+".csv");
+	        	File fuffaFile = new File (CSV_folder+partita_iva+".csv");
 	        	fileEntry.renameTo(fuffaFile);
 	        	}
 	            //System.out.println(fileEntry.getName());
@@ -216,35 +220,37 @@ public class BrevettoScraper {
 	    }
 	}
 	
-	public ArrayList<String> get_brev_URL (String partita_iva) {
+	public ArrayList<String> getPatentsURLs (String partita_iva, String CSV_folder) {
 		
 		ArrayList<String> url_brevetti = new ArrayList<String> ();
 		String line;
 		int i = 0;
 	
-	try {
-	FileReader fr = new FileReader("C:\\Users\\scorl\\Desktop\\Magistrale\\Secondo anno\\GISP ICT\\"+partita_iva+".csv");
-	BufferedReader br = new BufferedReader(fr);
+		try {
+			FileReader fr = new FileReader(CSV_folder+partita_iva+".csv");
+			BufferedReader br = new BufferedReader(fr);
 		
-	while ((line = br.readLine())!=null) {
-		i++;
-		if (i<3) continue;
+			while ((line = br.readLine())!=null) {
+				i++;
+				if (i<3) continue;
 		
-		String[] brevetto = line.split(",");
-		url_brevetti.add("https://patents.google.com/patent/" + brevetto[0].replace("-", ""));
+				String[] brevetto = line.split(",");
+				url_brevetti.add("https://patents.google.com/patent/" + brevetto[0].replace("-", ""));
+			}
+			
+			br.close();
+	
+		} catch (Exception e){}
+	
+		System.out.println(url_brevetti.toString());
+		System.out.println(url_brevetti.size());
+		return url_brevetti;
+	
 	}
-	
-	} catch (Exception e){}
-	
-	System.out.println(url_brevetti.toString());
-	System.out.println(url_brevetti.size());
-	return url_brevetti;
-	
-}
 
 
 
-	public void downloadCSV(String dw_link, String partita_iva) {
+	public void downloadCSV(String dw_link, String partita_iva, String CSV_folder) {
 		
 		
 		URL download = null;
@@ -254,7 +260,7 @@ public class BrevettoScraper {
 			download = new URL(dw_link);		
 			
 			ReadableByteChannel rbc = Channels.newChannel(download.openStream());
-			FileOutputStream fos = new FileOutputStream ("C:\\Users\\scorl\\Desktop\\Magistrale\\Secondo anno\\GISP ICT\\"+partita_iva+".csv");
+			FileOutputStream fos = new FileOutputStream (CSV_folder+partita_iva+".csv");
 			fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
 			fos.close();
 			
@@ -281,7 +287,9 @@ public class BrevettoScraper {
 */			
 			
 		
-		} catch (Exception e) {}
+		} catch (Exception e) {
+				System.out.println(e);
+			}
 		
 	}
 

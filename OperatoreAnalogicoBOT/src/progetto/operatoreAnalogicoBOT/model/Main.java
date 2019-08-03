@@ -17,13 +17,22 @@ public class Main {
 	
 
 	public static void main(String[] args) {
-		Model model = new Model();
-		String azRicercata = "Apple Inc";
+		
+		Model model = new Model(true); // IF FALSE, DOES NOT CONNECT TO DB
+		
+		String nomeAzienda = "sea marconi technologies";
+		String partitaIVA = "11111111111";
+		String ragioneSociale = "";
+		
+		Azienda az_test = new Azienda (nomeAzienda, partitaIVA, ragioneSociale);
 		
 		
+//		model.patents_test(az_test); // DECOMMENTARE PER BREVETTI
 		
 		
-		model.test(azRicercata);
+		model.webReputation_test(az_test); // DECOMMENTARE PER REPUTATION
+		
+		
 		
 
 		
